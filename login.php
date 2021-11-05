@@ -29,7 +29,7 @@ if(isset($_SESSION["unique_id"])){
             </section>
         </div>
     </div>
-    
+<?php require_once "includes/footer.php" ?>
 <script src="assets/js/password-actions.js"></script>
 <script src="assets/js/login.js"></script>
 <script type="text/javascript" src="assets/js/particles.min.js"></script>

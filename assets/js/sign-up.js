@@ -26,3 +26,24 @@ continueButton.onclick = () => {
     let formData = new FormData(signupForm); //New formData object
     xhr.send(formData);
 }
+function readURL(input) {
+
+    var property = document.querySelector('.video_input').files[0];
+    var file_size = property.size;
+
+    if(file_size > 500000000) {
+
+        alert("Audio file size is very big");
+    }
+    else {
+
+        if(input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#add_video').css("display", "block");
+                $('#add_video').attr('src', e.target.result).width(400);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+}

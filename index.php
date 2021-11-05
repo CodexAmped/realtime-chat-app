@@ -32,8 +32,11 @@ if(isset($_SESSION["unique_id"])){
                         <i class="fas fa-eye"></i>
                     </div>
                     <div class="field image">
-                        <label>Select Image</label>
-                        <input type="file" name="profile_image">
+                        <div class="profile-image-view">
+                            <img onclick="document.getElementById('profile_image').click(); return false;" class="profile-placeholder" src="" alt="Profile Photo">
+                        </div>
+                        <button class="files" id="files" onclick="document.getElementById('profile_image').click(); return false;"><i class="fa fa-image"></i>Add your image</button>
+                        <input type="file" name="profile_image" onchange="readURL(this);" style="visibility: hidden;" id="profile_image" accept="image/*" multiple="8">
                     </div>
                     <div class="field button">
                         <input type="submit" value="Contiinue to chat">
@@ -43,6 +46,7 @@ if(isset($_SESSION["unique_id"])){
             </section>
         </div>
     </div>
+<?php require_once "includes/footer.php" ?>
 <script src="assets/js/password-actions.js"></script>
 <script src="assets/js/sign-up.js"></script>
 <script type="text/javascript" src="assets/js/particles.min.js"></script>
